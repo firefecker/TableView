@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:elevation="@dimen/dp_6"
+        app:elevation="@dimen/dp_6"
+        app:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/main_color"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/toolbar_white_theme">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:src="@drawable/ic_arrow_back"
+            android:paddingLeft="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_8"
+            android:background="?attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchView"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionSearch"
+            app:defaultQueryHint="请输入搜索内容" />
+
+    </android.support.v7.widget.Toolbar>
+
+</LinearLayout>

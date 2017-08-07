@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/lin_content"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tv_data"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="语文"/>
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="50dp"
+        android:background="#cccccc"/>
+
+    <TextView
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="数学"/>
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="50dp"
+        android:background="#cccccc"/>
+
+    <TextView
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="英语"/>
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="@dimen/dp_50"
+        android:background="#cccccc"/>
+
+    <TextView
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="物理"/>
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="@dimen/dp_50"
+        android:background="#cccccc"/>
+
+    <TextView
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="化学"/>
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="@dimen/dp_50"
+        android:background="#cccccc"/>
+
+    <TextView
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text=""/>
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="@dimen/dp_50"
+        android:background="#cccccc"/>
+
+    <TextView
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text=""/>
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="@dimen/dp_50"
+        android:background="#cccccc"/>
+</LinearLayout>

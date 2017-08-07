@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.fire.tableview.view.SyncHorizontalScrollview
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:overScrollMode="never"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/lin_year_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:orientation="horizontal"/>
+</com.fire.tableview.view.SyncHorizontalScrollview>
