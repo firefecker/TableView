@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         mClasses = new ArrayList<>();
         mClasses.add("一班");
         mClasses.add("三班");
-        mClasses.add("三班");
+        mClasses.add("五班");
         mClasses.add("七班");
         mClasses.add("九班");
 
