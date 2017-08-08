@@ -178,4 +178,9 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     public void onTabReselected(TabLayout.Tab tab) {
         Log.e("TAGTAG","onTabReselected  -->  "+tab.getText().toString());
     }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
+    }
 }
