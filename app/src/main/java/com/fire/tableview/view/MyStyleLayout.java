@@ -21,6 +21,7 @@ public class MyStyleLayout extends LinearLayout {
     private LinearLayout layoutTitle;
 
     private Context mContext;
+    private SyncHorizontalScrollview mHeaderHorizontal;
 
     public MyStyleLayout(Context context) {
         super(context);
@@ -42,6 +43,7 @@ public class MyStyleLayout extends LinearLayout {
         mContext = context;
         inflateView = View.inflate(context, R.layout.style_layout, this);
         layoutTitle = (LinearLayout) inflateView.findViewById(R.id.lin_year_title);
+        mHeaderHorizontal = (SyncHorizontalScrollview) inflateView.findViewById(R.id.header_horizontal);
     }
 
     public void addViews(List<String> mDatas) {
@@ -54,5 +56,7 @@ public class MyStyleLayout extends LinearLayout {
         }
     }
 
-
+    public SyncHorizontalScrollview getmHeaderHorizontal() {
+        return mHeaderHorizontal;
+    }
 }
