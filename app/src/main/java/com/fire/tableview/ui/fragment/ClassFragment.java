@@ -46,6 +46,11 @@ public class ClassFragment extends BaseFragment {
     }
 
     @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
     public void loadData() {
         if (mWeeks.size() == 0) {
             mWeeks.add("周一");

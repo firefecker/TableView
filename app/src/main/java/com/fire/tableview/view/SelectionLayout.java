@@ -102,7 +102,6 @@ public class SelectionLayout extends LinearLayout {
             super(context, attrs, defStyleAttr);
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             layout = (LinearLayout) inflater.inflate(R.layout.view_selection, this);
-
             initView();
         }
 
@@ -147,7 +146,13 @@ public class SelectionLayout extends LinearLayout {
                     isOpen = false;
                 }
             });
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(0,0,0,20);
+            if (mListPopupWindow.getListView() != null) {
+                mListPopupWindow.getListView().setLayoutParams(layoutParams);
+            }
             mListPopupWindow.setModal(true);
+
         }
 
         public void closePopWindow() {

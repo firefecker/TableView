@@ -20,6 +20,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         super.onCreate(bundle);
         setContentView(getLayoutId());
         ButterKnife.bind(this);
+        initPresenter();
         initView();
         initData();
     }
@@ -29,6 +30,8 @@ public abstract class BaseActivity extends AppCompatActivity{
     protected abstract void initView();
 
     public abstract int getLayoutId();
+
+    public abstract void initPresenter();
 
     public void toast(String toast) {
         if (TextUtils.isEmpty(toast)) {

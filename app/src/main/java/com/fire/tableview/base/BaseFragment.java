@@ -93,6 +93,8 @@ public abstract class BaseFragment extends Fragment {
      */
     protected abstract int getLayout();
 
+    public abstract void initPresenter();
+
     /**
      * 子类实现加载数据的方法
      */

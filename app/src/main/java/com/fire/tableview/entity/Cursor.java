@@ -2,7 +2,6 @@ package com.fire.tableview.entity;
 
 import cn.bmob.v3.BmobObject;
 
-import static cn.bmob.v3.b.From.S;
 
 /**
  * Created by Administrator on 2017/8/9.

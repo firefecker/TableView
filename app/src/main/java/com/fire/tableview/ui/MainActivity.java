@@ -8,10 +8,12 @@ import android.view.MenuItem;
 
 import com.fire.tableview.R;
 import com.fire.tableview.base.BaseActivity;
+import com.fire.tableview.entity.ClassSheduleCard;
 import com.fire.tableview.entity.Classes;
-import com.fire.tableview.entity.Cursor;
-import com.fire.tableview.entity.Person;
 import com.fire.tableview.entity.Teacher;
+import com.fire.tableview.entity.TeacherSheduleCard;
+import com.fire.tableview.mvp.contract.MainContract;
+import com.fire.tableview.mvp.presenter.MainPresenter;
 import com.fire.tableview.ui.fragment.ClassFragment;
 import com.fire.tableview.view.SelectionLayout;
 
@@ -20,10 +22,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.SaveListener;
 
-
-public class MainActivity extends BaseActivity implements SelectionLayout.OnSelectListener {
+public class MainActivity extends BaseActivity implements SelectionLayout.OnSelectListener, MainContract.View {
 
     @BindView(R.id.mToolbar)
     Toolbar mToolbar;
@@ -32,37 +32,17 @@ public class MainActivity extends BaseActivity implements SelectionLayout.OnSele
 
     private ClassFragment classesFragment;
     private FragmentManager fragmentManager;
+    private MainPresenter mainPresenter;
+    private List<Teacher> teachers;
+    private List<Classes> classes;
+    protected List<List<String>> list2;
 
-    protected List<List<String>> list2 = new ArrayList<List<String>>() {{
-        add(new ArrayList<String>() {{
-            add("一班");
-            add("二班");
-            add("三班");
-            add("四班");
-            add("五班");
-            add("六班");
-            add("七班");
-            add("八班");
-            add("九班");
-        }});
-        add(new ArrayList<String>() {{
-            add("老师甲");
-            add("老师乙");
-            add("老师丙");
-            add("老师丁");
-            add("老师戊");
-            add("老师一");
-            add("老师二");
-            add("老师三");
-            add("老师四");
-            add("老师五");
-
-        }});
-    }};
 
     @Override
     protected void initData() {
-        setData();
+        mainPresenter.addClassesData();
+        mainPresenter.addTeacherData();
+        mainPresenter.addClassCursor(1,false);
     }
 
     @Override
@@ -81,23 +61,14 @@ public class MainActivity extends BaseActivity implements SelectionLayout.OnSele
         return R.layout.activity_main;
     }
 
+    @Override
+    public void initPresenter() {
+        mainPresenter = new MainPresenter(this);
+    }
+
     private void setData() {
+        list2 = mainPresenter.addDoubleData(classes, teachers);
         layoutSelection.setData(list2.toArray(new List[list2.size()]));
-        Cursor p2 = new Cursor();
-        p2.setTeacherId(1);
-        p2.setClassesId(1);
-        p2.setClassesName("一班");
-        p2.setCursorId(1);
-        p2.save(new SaveListener<String>() {
-            @Override
-            public void done(String objectId,BmobException e) {
-                if(e==null){
-                    toast("添加数据成功，返回objectId为："+objectId);
-                }else{
-                    toast("创建数据失败：" + e.getMessage());
-                }
-            }
-        });
     }
 
 
@@ -142,5 +113,42 @@ public class MainActivity extends BaseActivity implements SelectionLayout.OnSele
     @Override
     public void onSelect(int index, int position, String title) {
         toast("index = " + index + "position = " + position + "title = " + title);
+    }
+
+    @Override
+    public void getClassSheduleData(List<ClassSheduleCard> list, BmobException e) {
+
+    }
+
+    @Override
+    public void getTeacherSheduleData(List<TeacherSheduleCard> list, BmobException e) {
+
+    }
+
+    @Override
+    public void getClassesData(List<Classes> list, BmobException e) {
+        classes = list;
+        if (teachers != null) {
+            setData();
+        }
+
+    }
+
+    @Override
+    public void getTeacherData(List<Teacher> list, BmobException e) {
+        teachers = list;
+        if (classes != null) {
+            setData();
+        }
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
     }
 }
